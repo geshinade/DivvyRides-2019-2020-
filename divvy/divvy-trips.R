@@ -5,7 +5,7 @@
 ## this analysis is to try to answer the question: "In What ways do members
 ## and casual riders use Divvy bikes differently?"
 
-# Stage 1:
+# STEP 1:
 
 # install required packges
 # tidyverse for data import and wrangling
@@ -106,6 +106,7 @@ all_trips <- all_trips %>%
 View(all_trips)
 
 # STEP3: CLEAN UP AND ADD DATA TO PREPARE FOR ANALYSIS
+
 # Inspect the new table that has been created
 colnames(all_trips) # List of column names
 nrow(all_trips) # How many rows are there in the data frame>
@@ -177,7 +178,9 @@ all_trips_v2 <- all_trips[!(all_trips$start_station_name ==
 glimpse(all_trips_v2)
 
 View(all_trips_v2)
+
 # STEP 4: CONDUCT DESCRIPTIVE ANALYSIS
+
 # Describe the spread, centrality and variance of ride_length 
 # (all figures in seconds)
 
@@ -219,6 +222,7 @@ all_trips_v2 %>%
             average_duration = mean(ride_length)) %>% 
   arrange(member_casual,weekday)
 
+STEP 5: DATA VIZUALIZATION
 
 # Let's visualize the number of rides by rider type
 all_trips_v2 %>% 
@@ -253,7 +257,8 @@ all_trips_v2 %>%
 ## ride_length for casual riders was far higher than that 
 ## of annual members on a daily basis
 
-## CONCLUSION and RECOMMENDATION
+STEP 6: CONCLUSION and RECOMMENDATION
+
 ## From the results above, it is quite clear that the annual members and casual 
 ## riders use divvy bikes differently. While the annual members are more than 
 ## casual riders, the higher average duration for casual riders suggest that with 
